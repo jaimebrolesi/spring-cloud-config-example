@@ -1,0 +1,33 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+#    bus:
+#      enabled: true
+    config:
+      allowOverride: true
+      overrideNone: false
+      server:
+        git:
+          uri: https://github.com/jaimebrolesi/spring-cloud-config-repo.git
+
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: root
+#    password: root
+
+security:
+  user:
+    name: root      #Can be replaced by an environment variable.
+    password: root  #Can be replaced by an environment variable.
+
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: 123456
+    alias: serverkey
+    secret: ConfigServer
+
+# monitoring webhooks for Bus intervention http://root:root@localhost:8888/monitor

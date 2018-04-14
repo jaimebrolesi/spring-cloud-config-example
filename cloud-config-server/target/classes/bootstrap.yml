@@ -1,0 +1,23 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      allowOverride: true
+      overrideNone: false
+      server:
+        git:
+          uri: https://github.com/jaimebrolesi/spring-cloud-config-repo.git
+
+security:
+  user:
+    name: root      #Can be replaced by an environment variable.
+    password: root  #Can be replaced by an environment variable.
+
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: 123456
+    alias: serverkey
+    secret: ConfigServer

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config-client
+
+  cloud:
+    config:
+      enabled: false
+#    bus:
+#      enabled: false
+
+  config:
+    location: '${user.home}/.app-configs/config-client.properties'
+
+  #autoconfigure:
+  #    exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
